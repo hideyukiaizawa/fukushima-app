@@ -5,6 +5,7 @@ import { CreateTweet, buildTweet } from '../entities/Tweet'
 const usersFirestoreRef = db.collection('users')
 const usersStorageRef = storage.ref('users')
 
+
 const setTweetImage = async (uid: string, tweetID: string, fileName: string, blob: Blob) => {
   const userStorageRef = usersStorageRef.child(uid)
   const task = userStorageRef.child(`tweets/${tweetID}/${fileName}.png`).put(blob, { contentType: 'image/png' })
